@@ -39,12 +39,13 @@ public class UF2ACT4 {
 			for (int i = 0; i < articles.length; i++) {
 
 				Thread.sleep(articles[i]*100);
-				System.out.println("Client " + numClient + " article " + (i+1) + "/" + articles.length 
-						+ " (" + articles[i] + " segons)...");
 
-				if (i == articles.length - 1){
-					System.out.println("Client " + numClient + " article " + numArticles + "/" + numArticles + "(" 
-							+ articles[articles.length] + " segons)...FINALITZAT");
+				if (i + 1 == articles.length) {
+					System.out.println("Client " + numClient + " article " + numArticles + "/" + numArticles + " (" 
+							+ articles[i] + " segons)...FINALITZAT");
+				} else {
+					System.out.println("Client " + numClient + " article " + (i+1) + "/" + articles.length 
+							+ " (" + articles[i] + " segons)...");
 				}
 			}
 
