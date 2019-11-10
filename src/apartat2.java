@@ -17,12 +17,16 @@ public class apartat2 {
 		@Override
 		public void run()  {
 
+			// Creem un boolean per a sortir del bucle si no hi han mes cambis
 			boolean cambis =true;
+			// Bucle que no es sortira fins que s'ordeni
 			while (cambis == true) {
 
+				// Creem les variables que necessitarem per ordenar l'array i sortir del bucle
 				cambis = false;
 				int numAnterior = Integer.MIN_VALUE;
 
+				// Ordenem el array
 				for (int i = 0; i < numDesordenats.length; i++) {
 
 
@@ -32,9 +36,10 @@ public class apartat2 {
 						numDesordenats[i] = numAnterior;
 						cambis = true;
 					}
-					numAnterior = numDesordenats [i];
+					numAnterior = numDesordenats[i];
 
 
+					// Anem mostran els cambis
 					System.out.print("(");
 					for (int j = 0; j < numDesordenats.length; j++) {
 					
@@ -52,7 +57,7 @@ public class apartat2 {
 
 
 			}
-			
+			// Mostrem resultat final
 			System.out.print("RESULTAT FINAL = " );
 			System.out.print("(");
 			for (int j = 0; j < numDesordenats.length; j++) {
@@ -68,14 +73,14 @@ public class apartat2 {
 		}
 	}
 	public static void main(String[] args) throws InterruptedException, ExecutionException{
-		// Creem un ThreadPoolExecutor que creara 5 fils
+		// Creem un ThreadPoolExecutor que creara 1 fil
 
 		ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(1);
 
+		// Creem el array de numeros desordenats
 		int [] numDesordenats = {2,9,4,8,1,3,5,7,6};
 
-		// Creem els clients
-
+		// Creem el objecte del array desordenat
 		Ordena intArray = new Ordena(numDesordenats);
 
 		// Executem les tasques
