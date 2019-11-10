@@ -73,9 +73,9 @@ public class apartat2 {
 		}
 	}
 	public static void main(String[] args) throws InterruptedException, ExecutionException{
-		// Creem un ThreadPoolExecutor que creara 1 fil
+		// Creem un ThreadPoolExecutor que creara 4 fils i per cada nucli
 
-		ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(1);
+		ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(4);
 
 		// Creem el array de numeros desordenats
 		int [] numDesordenats = {2,9,4,8,1,3,5,7,6};
